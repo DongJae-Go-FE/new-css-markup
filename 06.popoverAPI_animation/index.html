@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.popoverAPI_animation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>06.popoverAPI_animation</h1>
+    <p>모달 및 display:none 애니메이션</p>
+    <p>popoverAPI - can i use: <a href="https://caniuse.com/mdn-api_htmlelement_popover">https://caniuse.com/mdn-api_htmlelement_popover</a></p>
+    <p>@starting-style, transition-behavior - can i use: <a href="https://caniuse.com/?search=starting-style">https://caniuse.com/?search=starting-style</a></p>
+
+
+    <button type="button" popovertarget="modal">팝업 오픈!</button>
+
+    <div class="modal" role="dialog" id="modal" popover>
+        <h2>팝업</h2>
+        <button type="button" popovertarget="modal" popovertargetaction="hide">닫기</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+.accordion {
+  width: 700px;
+  margin: 200px auto;
+
+  .item {
+    overflow: hidden;
+
+    width: 100%;
+
+    padding: 10px 0 0 20px;
+
+    background-color: beige;
+    border-bottom: 1px solid #ddd;
+
+    cursor: pointer;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .depth2 {
+      overflow: hidden;
+
+      display: grid;
+      grid-template-rows: 0fr;
+
+      transition: 0.5s;
+
+      .sub {
+        overflow: hidden;
+      }
+    }
+
+    &:hover {
+      .depth2 {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+}

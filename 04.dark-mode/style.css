@@ -1,0 +1,24 @@
+div {
+  width: 700px;
+  height: 500px;
+}
+
+.media {
+  background-color: cadetblue;
+}
+
+/*color-scheme 속성과 light-dark 함수 */
+.fun {
+  color-scheme: light dark;
+  background-color: light-dark(yellow, blue);
+}
+
+@media (prefers-color-scheme: light) {
+  /* 라이트 모드에 적용할 스타일 정의 */
+}
+
+@media (prefers-color-scheme: dark) {
+  .media {
+    background-color: red;
+  }
+}
