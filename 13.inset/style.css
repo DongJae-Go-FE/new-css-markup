@@ -1,0 +1,36 @@
+.container {
+  width: 500px;
+  height: 500px;
+
+  margin: 100px;
+
+  position: relative;
+
+  background-color: chocolate;
+
+  .box {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+
+    background-color: yellow;
+
+    transform: translate(-50%, -50%);
+  }
+
+  &:nth-of-type(1) {
+    .box {
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+    }
+  }
+
+  &:nth-of-type(2) {
+    .box {
+      inset: 50% 0 0 50%;
+    }
+  }
+}
