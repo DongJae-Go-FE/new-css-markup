@@ -1,0 +1,83 @@
+.none {
+  color: blanchedalmond;
+}
+/*순서로 우선순위 가능*/
+@layer layer_3, layer_1, layer_2;
+
+@layer layer_1 {
+  p {
+    color: red;
+    font-weight: 700;
+  }
+}
+
+@layer layer_2 {
+  p {
+    color: blue;
+  }
+}
+
+@layer layer_3 {
+  p {
+    color: orange;
+    font-weight: 400;
+  }
+}
+
+/* @layer로 우선 순위 지정 가능 */
+
+@layer layer_1 {
+  p {
+    font-style: italic;
+  }
+}
+
+/* 재사용도 가능 */
+
+
+
+
+
+@layer none {
+  .none {
+    color: red;
+    font-weight: 700;
+  }
+}
+
+/* layer 안쓴게 우선순위 높음 */
+
+
+
+
+
+
+@layer base {
+  .text {
+    color: red;
+    font-weight: 400;
+  }
+}
+
+@layer next {
+  @layer first {
+    .text {
+      color: blue;
+      font-weight: 700;
+    }
+  }
+  @layer second {
+    .text {
+      color: orange;
+    }
+  }
+}
+
+
+@layer next.second {
+  .text {
+    color: pink;
+  }
+}
+
+/*  중첩 및 object씩 접근  */

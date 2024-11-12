@@ -1,0 +1,54 @@
+html,
+body {
+  width: 1920px;
+  height: 100dvh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 500px;
+
+  .box {
+    height: 100%;
+
+    background-color: yellow;
+  }
+
+  &:nth-of-type(1) {
+    .box {
+      width: min(80%, 1200px); /*(기본너비, 최대너비 즉 max-width) */
+      /* 둘중 작은 값을 선택 */
+    }
+  }
+
+  &:nth-of-type(2) {
+    margin-top: 100px;
+
+    .box {
+      width: max(50%, 200px); /*(기본너비, 최소너비 즉 min-width)*/
+      /*둘중 큰거 선택*/
+    }
+  }
+
+  &:nth-of-type(3) {
+    margin-top: 100px;
+
+    .box {
+      width: clamp(
+        50%,
+        1200px,
+        80%
+      ); /*clamp(최소값/min-width, 기본값, 최대값/max-width)*/
+    }
+  }
+}
+
+/* min(), max(), clamp()은 다른 단위를 사용하는 경우에만 사용가능 */

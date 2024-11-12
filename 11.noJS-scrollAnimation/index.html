@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01.nesting</title>
+    <title>11.noJS-ScrollAnimate</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <h1>nesting</h1>
-    <p>기본 css에서도 nesting 지원</p>
-    <p>can i use: <a href="https://caniuse.com/?search=nesting">https://caniuse.com/?search=nesting</a></p>
+    <h1>noJS-ScrollAnimate</h1>
+    <p>js 없이 scroll animation 구현 가능</p>
+    <strong> 아직 safari, firefox 미지원입니다!!!!!</strong>
+    <p>can i use: <a href="https://caniuse.com/mdn-css_properties_animation-timeline_scroll">https://caniuse.com/mdn-css_properties_animation-timeline_scroll</a></p>
+    <p>example <a href="https://scroll-driven-animations.style/">https://scroll-driven-animations.style/</a></p>
     <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
     </div>
+    <script>
+        alert("크롬으로 확인해주세요");
+    </script>
 </body>
 
 </html>
