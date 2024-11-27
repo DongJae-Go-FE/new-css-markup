@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.container-style-queries</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>14.container-style-queries</h1>
+    <p>container-name을 작명하거나 커스텀 속성을 만들어서 컨테이너쿼리로 사용 가능</p>
+    <p>파이어폭스 미지원!!!!</p>
+    <p>도입에 대한 검토와 활용성에 대한 고민이 많이 필요</p>
+    <p>can i use: <a href="https://caniuse.com/?search=style()">https://caniuse.com/?search=style()</a></p>
+    <div class="container">
+        <div></div>
+    </div>
+    <div class="container">
+        <div></div>
+    </div>
+    <div class="container">
+        <div></div>
+    </div>
+    <div class="container">
+        <div></div>
+    </div>
+    <div class="container" style="--bg-color: var(--bg-purple);">
+        인라인도 가능
+        <div></div>
+    </div>
+
+    <section class="section">
+        <div class="card"></div>
+    </section>
+
+
+    <section class="section2" style="--boolean-type: true">
+        <div class="card"></div>
+    </section>
+
+</body>
+
+</html>

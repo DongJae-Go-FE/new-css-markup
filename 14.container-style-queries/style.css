@@ -1,0 +1,110 @@
+:root {
+  --bg-red: red;
+  --bg-blue: blue;
+  --bg-yellow: yellow;
+  --bg-green: green;
+  --bg-purple: purple;
+  --bg-gray: gray;
+}
+
+.container {
+  width: 700px;
+  height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    width: 200px;
+    height: 200px;
+  }
+
+  &:nth-of-type(1) {
+    --bg-color: var(--bg-red);
+  }
+  &:nth-of-type(2) {
+    --bg-color: var(--bg-blue);
+  }
+  &:nth-of-type(3) {
+    --bg-color: var(--bg-yellow);
+  }
+  &:nth-of-type(4) {
+    --bg-color: var(--bg-green);
+  }
+}
+
+.section {
+  width: 700px;
+  height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  container-name: section;
+  --bg-color: var(--bg-gray);
+
+  > .card {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.section2 {
+  width: 700px;
+  height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > .card {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@container style( --bg-color: var(--bg-red)) {
+  /* 해당 미디어쿼리단에서는  >, +  선택자 사용 불가 */
+  div {
+    background-color: var(--bg-red);
+  }
+}
+
+@container style( --bg-color: var(--bg-blue)) {
+  div {
+    background-color: var(--bg-blue);
+  }
+}
+
+@container style( --bg-color: var(--bg-yellow)) {
+  div {
+    background-color: var(--bg-yellow);
+  }
+}
+
+@container style( --bg-color: var(--bg-green)) {
+  div {
+    background-color: var(--bg-green);
+  }
+}
+
+@container style( --bg-color: var(--bg-purple)) {
+  div {
+    background-color: var(--bg-purple);
+  }
+}
+
+@container section style(--bg-color: var(--bg-gray)) {
+  .card {
+    background-color: var(--bg-gray);
+  }
+}
+
+/*react, vue 같은 곳에서는 boolean 타입도 괜찮을듯?*/
+@container style(--boolean-type: true) {
+  .card {
+    background-color: black;
+  }
+}
