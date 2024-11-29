@@ -1,0 +1,18 @@
+.container {
+  /* display: block; 기본 block입니다*/ 
+  align-content: center;
+
+  width: 1000px;
+  height: 1000px;
+
+  background-color: blue;
+
+  > div {
+    width: 200px;
+    height: 200px;
+
+    &:nth-child(1) {
+      background-color: red;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@property --bg-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: gray;
+}
+
+@property --startColor {
+  syntax: "<color>";
+  initial-value: #eadedb;
+  inherits: false;
+}
+
+@property --endColor {
+  syntax: "<color>";
+  initial-value: #bc70a4;
+  inherits: false;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  > div {
+    width: 200px;
+    height: 200px;
+    background-color: var(--bg-color);
+
+    &:nth-of-type(2) {
+      --bg-color: #ff6347;
+    }
+
+    &:nth-of-type(3) {
+      --bg-color: 2; /*틀린 타입*/
+    }
+  }
+}
+
+.tran {
+  width: 400px;
+  height: 400px;
+
+  margin-top: 30px;
+
+  position: relative;
+  background: linear-gradient(var(--startColor), var(--endColor));
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    background: linear-gradient(var(--endColor), var(--startColor));
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.ani {
+  margin-top: 40px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(var(--startColor), var(--endColor));
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    --startColor: #eadedb;
+    --endColor: #bc70a4;
+  }
+  50% {
+    --startColor: #bc70a4;
+    --endColor: #bfd641;
+  }
+}
