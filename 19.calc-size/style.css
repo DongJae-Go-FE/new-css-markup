@@ -1,0 +1,27 @@
+.red {
+  color: red;
+  font-size: 39px;
+  font-weight: bold;
+}
+
+ul {
+  width: 300px;
+  margin-top: 30px;
+  list-style: none;
+}
+
+ul li {
+  overflow-x: clip;
+  display: inline-block;
+  inline-size: 10px;
+  height: 30px;
+
+  background-color: aqua;
+  transition: inline-size 0.35s ease;
+
+  cursor: pointer;
+}
+
+ul li:hover {
+  inline-size: calc-size(auto, size + 1em); /*확인*/
+}

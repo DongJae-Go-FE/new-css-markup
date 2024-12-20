@@ -1,0 +1,13 @@
+h2 {
+  /* paint-order: stroke fill; */
+
+  color: white;
+  -webkit-text-stroke: 5px black;
+}
+
+h3 {
+  paint-order: stroke fill;
+
+  color: white;
+  -webkit-text-stroke: 5px black;
+}

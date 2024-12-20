@@ -1,0 +1,33 @@
+:root {
+  interpolate-size: allow-keywords;
+}
+*/ .red {
+  color: red;
+  font-size: 39px;
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  margin-top: 30px;
+
+  list-style: none;
+}
+
+ul li {
+  overflow-x: clip;
+  width: 10px;
+  height: 30px;
+
+  background-color: aqua;
+  transition: width 0.35s ease;
+
+  cursor: pointer;
+}
+
+ul li:hover {
+  width: max-content;
+}

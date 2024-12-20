@@ -1,0 +1,19 @@
+.red {
+  color: red;
+  font-size: 39px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  min-width: 40px;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  margin-bottom: 10px;
+
+  field-sizing: content;
+}

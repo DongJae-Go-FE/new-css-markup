@@ -1,0 +1,26 @@
+.red {
+  color: red;
+  font-size: 39px;
+  font-weight: bold;
+}
+
+button {
+  anchor-name: --btn;
+
+  &:hover {
+    + .box {
+      display: block;
+    }
+  }
+}
+
+.box {
+  display: none;
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+
+  position: fixed;
+  position-anchor: --btn;
+  position-area: block-end;
+}
