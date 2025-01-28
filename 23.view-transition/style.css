@@ -1,0 +1,141 @@
+/* 크롬 몇몇 버전 및 맥북에서 크롬을 열어서 할 때는 개발자 도구르 켜야 작동하는 버그가 있음 */
+/* 사파리 18버전 이상만 가능 */
+
+/*시스템 애니메이션 모드가 켜졌을 경우만 */
+/* @media (prefer-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+} */
+
+@view-transition {
+  navigation: auto;
+}
+
+/* 해당 css는 전제 전환*/
+/* root는 html지적 */
+/* ::view-transition-group(root) {
+    animation: fade-in-out 1s ease-in-out;
+}
+
+
+@keyframes fade-in-out {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+} */
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes moveRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 해당 css는 현재 페이지를 어찌 처리할지 전환*/
+::view-transition-old(root) {
+  animation: moveLeft 1s both;
+}
+/* 해당 css는 이동할 페이지를 어찌 처리할지 전환*/
+::view-transition-new(root) {
+  animation: moveRight 1s both;
+}
+
+body,
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  /* 이랗게 지정한 거는 따로 애니메이션을 지정해줘야 한다. 전체 적용하는 거 제외도 가능*/
+  view-transition-name: header;
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: blanchedalmond;
+}
+.nav ul li {
+  flex: 1;
+  height: 100%;
+}
+.nav ul li a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  height: 500px;
+  background-color: cadetblue;
+  font-size: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: chocolate;
+  font-size: 20px;
+  view-transition-name: box;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* 해당 css는 name 지정한 걸 현재  */
+::view-transition-old(box) {
+  animation: fadeOut 1s both 0.5s;
+}
+/* 해당 css는 이동할 페이지를 어찌 처리할지 전환*/
+::view-transition-new(box) {
+  animation: fadeUp 1s both 0.5s;
+}
