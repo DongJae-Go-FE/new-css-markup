@@ -1,0 +1,52 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+}
+
+.a {
+  font-size: 20px;
+  color: yellow;
+  &:nth-child(1) {
+    /* underline 두께 */
+    text-decoration-thickness: 16px;
+  }
+
+  &:nth-child(2) {
+    /* underline 색상 */
+    text-decoration-color: brown;
+  }
+
+  &:nth-child(3) {
+    text-decoration-color: brown;
+    /* underline 스타일 */
+    text-decoration-style: double;
+  }
+
+  &:nth-child(4) {
+    text-decoration-color: brown;
+    text-decoration-style: wavy;
+  }
+
+  &:nth-child(5) {
+    text-decoration-color: brown;
+    text-decoration-style: wavy;
+    /* underline 침범 글자  덮어쓰기*/
+    text-decoration-skip-ink: none;
+  }
+
+  &:nth-child(6) {
+    text-decoration-color: brown;
+    /* underline 간격*/
+    text-underline-offset: 10px;
+  }
+
+  &:nth-child(7) {
+    text-decoration-color: brown;
+    text-decoration-line: line-through overline;
+  }
+}
