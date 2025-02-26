@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  > div {
+    width: 200px;
+    height: 200px;
+
+    &:nth-child(1) {
+      background-color: red;
+    }
+
+    &:nth-of-type(2) {
+      background-color: yellowgreen;
+    }
+
+    .type2 & {
+      &:nth-child(1) {
+        background-color: blue;
+      }
+
+      &:nth-of-type(2) {
+        background-color: palevioletred;
+      }
+    }
+  }
+}
