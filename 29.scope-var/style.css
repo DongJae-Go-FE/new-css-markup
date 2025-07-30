@@ -1,0 +1,18 @@
+.box {
+  --color: red;
+
+  width: 300px;
+  height: 300px;
+  background-color: var(--color);
+  /* 이렇게 지역 변수 가능*/
+}
+
+.box2 {
+  --var: attr(data-var type(<custom-ident>)); /*내가 만든 거 타입 지정*/
+  --width: attr(data-width px);
+  --color: attr(data-color type(<color>));
+  width: var(--width);
+  height: 300px;
+
+  background-color: var(--color);
+}

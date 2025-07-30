@@ -1,0 +1,29 @@
+.wrap {
+  --custom: 1;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+
+  font-size: 40px;
+
+  background-color: red;
+}
+/* @container style(display: flex) 이런거는 안돼*/
+@container style(--custom:1) {
+  .box {
+    background-color: blue;
+  }
+}
+
+.yellow-container {
+  --theme: attr(data-theme type(<custom-ident>));
+}
+
+@container style(--theme: yellow) {
+  .box {
+    background-color: yellow;
+    font-size: 10px;
+  }
+}

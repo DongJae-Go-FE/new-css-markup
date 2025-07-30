@@ -1,0 +1,29 @@
+:root{
+  --bp: if(
+        media(width <= 600px): "sm" 
+        media(width <= 1000px): "md"
+        else "lg"
+        /* 이런식으로 브레이크 포인트 관리도 가능*/
+  )
+}
+
+
+.box {
+  --text: "hi";
+
+  width: 300px;
+  height: 300px;
+
+  font-size: 40px;
+
+  background-color: if(
+    media(width <= 600px): purple; 
+    media(width <= 1000px): blue;
+    else: red;
+  );
+
+  color: if(
+    style(--text:"hi"): blue;
+    else:green;
+  )
+}
